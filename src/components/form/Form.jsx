@@ -3,6 +3,8 @@ import { collection, addDoc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db } from '../../firebase'
 import { storage } from "../../firebase";
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 
 function ItemCadastro() {
   const [categoria, setCategoria] = useState("");
@@ -80,68 +82,80 @@ function ItemCadastro() {
   };
 
   return (
+
     <div>
       <h2>Cadastro de Produtos</h2>
-      <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
 
-        <div>
-          <label>Categoria:</label>
-          <input type="text" value={categoria} onChange={handleCategoriaChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Categoria</label>
+            <input type="text" class="form-control" value={categoria} onChange={handleCategoriaChange} />
+            <div class="form-text">Informe a categoria do seu produto</div>
+          </div>
 
-        <div>
-          <label>Produto:</label>
-          <input type="text" value={produto} onChange={handleProdutoChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Produto</label>
+            <input type="text" class="form-control" value={produto} onChange={handleProdutoChange} />
+            <div class="form-text">Informe o nome do seu produto</div>
+          </div>
 
-        <div>
-          <label>Avaliação:</label>
-          <input type="text" value={avaliacao} onChange={handleAvaliacaoChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Avaliação</label>
+            <input type="text" class="form-control" value={avaliacao} onChange={handleAvaliacaoChange} />
+            <div class="form-text">Dê uma avaliação ao seu produto</div>
+          </div>
 
-        <div>
-          <label>Valor:</label>
-          <input type="text" value={valor} onChange={handleValorChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Valor</label>
+            <input type="text" class="form-control" value={valor} onChange={handleValorChange} />
+            <div class="form-text">Informe o valor do seu produto</div>
+          </div>
 
-        <div>
-          <label>Quantidade:</label>
-          <input type="text" value={quantidade} onChange={handleQuantidadeChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Quantidade</label>
+            <input type="text" class="form-control" value={quantidade} onChange={handleQuantidadeChange} />
+            <div class="form-text">Informe a quantidade do seu produto</div>
+          </div>
 
-        <div>
-          <label>Peso:</label>
-          <input type="text" value={peso} onChange={handlePesoChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Peso</label>
+            <input type="text" class="form-control" value={peso} onChange={handlePesoChange} />
+            <div class="form-text">Informe o peso do seu produto</div>
+          </div>
 
-        <div>
-          <label>Largura:</label>
-          <input type="text" value={largura} onChange={handleLarguraChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Largura</label>
+            <input type="text" class="form-control" value={largura} onChange={handleLarguraChange} />
+            <div class="form-text">Informe a largura do seu produto</div>
+          </div>
 
-        <div>
-          <label>Altura:</label>
-          <input type="text" value={altura} onChange={handleAlturaChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Altura</label>
+            <input type="text" class="form-control" value={altura} onChange={handleAlturaChange} />
+            <div class="form-text">Informe a altura do seu produto</div>
+          </div>
 
-        <div>
-          <label>Comprimento:</label>
-          <input type="text" value={comprimento} onChange={handleComprimentoChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Comprimento</label>
+            <input type="text" class="form-control" value={comprimento} onChange={handleComprimentoChange} />
+            <div class="form-text">Informe o comprimento do seu produto</div>
+          </div>
 
-        <div>
-          <label>Descrição:</label>
-          <input type="text" value={descricao} onChange={handleDescricaoChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Descrição</label>
+            <textarea class="form-control" rows="15" value={descricao} onChange={handleDescricaoChange} />
+          </div>
 
-        <div>
-          <label>Imagens:</label>
-          <input type="file" multiple onChange={handleImagensChange} />
-        </div>
+          <div class="mb-3">
+            <label class="form-label">Imagens</label>
+            <input type="file" class="form-control" multiple onChange={handleImagensChange} />
+          </div>
         
-        <button type="submit">Cadastrar</button>
-      </form>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+          
+        </form>
     </div>
+
   );
 }
 
